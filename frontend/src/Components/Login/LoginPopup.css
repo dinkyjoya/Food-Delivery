@@ -1,0 +1,142 @@
+.hidden {
+  display: none;
+}
+
+.login-popup {
+  color: white;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  background-color: #00000090;
+}
+
+.form-container {
+  place-self: center;
+  width: max(30vw, 450px);
+  display: flex;
+  flex-direction: column;
+  top: 3rem;
+  gap: 25px;
+  padding: 30px 50px;
+  border: 3px solid rgba(200, 197, 197, 0.992);
+  border-radius: 30px;
+  font-size: 14px;
+  backdrop-filter: blur(20px);
+  /* background-image:url('https://images.pexels.com/photos/2171077/pexels-photo-2171077.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load'); */
+  color: #808080;
+  background-color: white;
+}
+
+.navbar .fa-solid{
+  color:rgba(79, 77, 77, 0.2);
+} 
+
+
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 4vw;
+  transition: 0.3s;
+}
+
+.form-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-title img{
+    cursor: pointer;
+}
+
+.form-title h2 {
+  margin: 40px 0;
+  color: rgb(208, 79, 32);
+  font-size: 30px;
+  font-style: cursive;
+}
+
+.form-inputs {
+  width: 280px;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-field {
+  width: 100%;
+  height: 55px;
+  padding: 0 15px;
+  margin: 10px 0;
+  color: #808080;
+  background: rgba(79, 77, 77, 0.2);
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+::placeholder {
+  color: #808080;
+  font-size: 15px;
+}
+
+.input-box i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+
+.input-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 55px;
+  padding: 0 15px;
+  background: rgb(255, 86, 2);
+  color: white;
+  font-size: large;
+  border: none;
+  border-radius: 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.condition p {
+  cursor: pointer;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.social-login i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  background: rgba(186, 185, 185, 0.71);
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.login-popup p span{
+  color:tomato;
+  font-weight: 500;
+  cursor: pointer;
+}

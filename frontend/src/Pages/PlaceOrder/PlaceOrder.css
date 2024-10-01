@@ -1,0 +1,121 @@
+.place-order input[type="text"],
+.place-order input[type="email"],
+.place-order input[type="password"],
+.place-order input[type="number"],
+.place-order input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect for inputs */
+.place-order input:focus {
+  border-color: rgb(228, 73, 17);
+  outline: none;
+}
+
+/* Specific styling for multi-fields */
+.place-order .multi-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+}
+
+/* Ensure each multi-field input takes up the full width */
+.place-order .multi-fields input {
+  flex: 1;
+}
+
+/* Button styling */
+.place-order-right .order-success-message .button {
+  padding: 12px 20px;
+  background-color: rgb(228, 73, 17);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.place-order-right .order-success-message .button:hover {
+  background-color: green;
+}
+
+/* Label styling */
+.place-order label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+/* Container styling */
+.place-order {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.place-order-left,
+.place-order-right {
+  flex: 1;
+}
+
+.place-order-left {
+  max-width: 60%;
+ 
+  padding: 30px;
+}
+
+.place-order-left .title{
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: 500;
+    color:rgb(228, 73, 17)
+}
+
+.place-order-right {
+  max-width: 35%;
+}
+
+.place-order-right h2{
+    color:rgb(228, 73, 17);
+    font-size: 30px;
+    font-weight: 500;
+}
+
+
+.cart-total {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.cart-total h2 {
+  margin-bottom: 20px;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-total-details p,
+.cart-total-details b {
+  margin: 0;
+}
+
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 10px 0;
+}

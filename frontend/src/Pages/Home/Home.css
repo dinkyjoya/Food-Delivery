@@ -1,0 +1,19 @@
+.container{
+    /* background: url('https://images.pexels.com/photos/750073/pexels-photo-750073.jpeg?auto=compress&cs=tinysrgb&w=1000') no-repeat ; */
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.background-image{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
