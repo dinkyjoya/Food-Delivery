@@ -99,7 +99,7 @@ const registerUser = async (req, res) => {
       httpOnly: true,
     });
 
-     res.json({success:true, token});
+     
 
     await transporter.sendMail({
       from: "dimplejoya2@gmail.com",
@@ -110,7 +110,7 @@ const registerUser = async (req, res) => {
     console.log("Sending OTP to:", email);
 
    
-
+  res.json({success:true, token});
    return res.status(200).json({
       success: true,
       message: "User registered successfully",
@@ -157,11 +157,6 @@ const verifyUser = async(req, res)=>{
     });
   }
 }
-
-
-
-
-
 
 
 export { loginUser, registerUser,verifyUser };
