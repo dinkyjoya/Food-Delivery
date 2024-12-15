@@ -4,8 +4,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 10px 20px;
+  padding: 0px 20px;
   position: fixed;
+  font-size: 20px;
   top: 0;
   left: 0;
   width: 100%;
@@ -25,13 +26,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Navbar Menu Styles */
 .navbar-menu {
-  display: flex; /* Flex for large screens */
+  display: flex; 
   list-style: none;
   gap: 20px;
   color: rgb(0, 0, 0);
-  font-size: 18px;
+  font-size: 18spx;
   padding: 0;
   margin: 0;
 }
@@ -60,10 +60,10 @@
 
 .navbar-menu a {
   display: block;
-  padding: 15px;
+  padding: 13px;
 }
 
-/* Right Section Styles */
+
 .navbar-right {
   display: flex;
   align-items: center;
@@ -79,10 +79,9 @@
   border: 1px solid #ccc;
   outline: none;
   color: rgb(53, 53, 53);
-  padding: 8px; /* Added padding for better usability */
+  padding: 8px; 
 }
 
-/* Close Icon */
 .close-icon {
   display: none;
   font-size: 20px;
@@ -97,10 +96,10 @@
 }
 
 .close-icon:hover {
-  color: rgb(232, 122, 43); /* Add a hover color for better UX */
+  color: rgb(232, 122, 43);
 }
 
-/* Sign In Button */
+
 .navbar .sign-in-button {
   background: transparent;
   font-size: 16px;
@@ -117,7 +116,7 @@
   color: white;
 }
 
-/* Profile Dropdown */
+
 .nav-profile-dropdown {
   position: absolute;
   display: none;
@@ -153,49 +152,46 @@
   color: rgb(203, 81, 20);
 }
 
-/* Responsive Styles for Smaller Screens (Below 768px) */
+
 @media (max-width: 768px) {
-  /* Navbar Menu: Hide by default */
   .navbar-menu {
     display: none;
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 100%; /* Align below the navbar */
+    top: 100%;
     left: 0;
     background-color: #fff;
-    z-index: 999; /* Ensure the menu stays above other content */
+    z-index: 999;
   }
 
   .navbar-menu.open {
     display: block;
   }
 
-  /* Navbar Toggler: Show on small screens */
   .navbar-toggler {
     display: block;
   }
 
-  /* Right Section: Hide for small screens */
+
   .navbar-right {
     display: none;
   }
 
-  /* Navbar Menu Links: Align in the center */
+
   .navbar-menu a {
     text-align: center;
     padding: 15px;
   }
 
-  /* Hide Search Bar on Small Screens */
   .navbar-search-form {
     display: none;
   }
 }
 
-/* Small Screen Styling (Below 480px) */
+
 @media (max-width: 480px) {
-  /* Adjust font size for very small screens */
+
   .navbar-menu {
     font-size: 14px;
   }
