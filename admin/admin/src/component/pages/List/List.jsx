@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./List.css";
 import axios from "axios";
 import { toast } from "react-toastify";
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://localhost:8000";
 
 const List = () => {
   
@@ -55,7 +55,7 @@ const List = () => {
           return (
             <div key={index} className="list-table-format">
             
-              <img src={`http://localhost:8000/images/` + item.image} alt="" />
+              <img src={`https://localhost:8000/images/` + item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{item.price}</p>

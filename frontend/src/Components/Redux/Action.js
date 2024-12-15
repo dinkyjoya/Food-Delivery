@@ -16,7 +16,7 @@ import {
   DECREMENT_QTY,
 } from "./Contant";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://localhost:8000";
 
 const registerNewUser = (userData, navigate) => async (dispatch) => {
   dispatch({ type: REGISTER_NEW_USER_REQUEST });

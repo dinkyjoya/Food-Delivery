@@ -19,28 +19,29 @@ const LoginPopup = ({ setShowLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let newUrl = url;
-    if (currState === "Login") {
-      newUrl += "/api/user/login";
-    } else {
-      newUrl += "/api/user/register";
-    }
+    let newUrl = `${url}/api/user/${currState === "Login" ? "login" : "register"}`;
+    console.log("Requesting URL:", newUrl);
+
     console.log("userData", userData);
 
     try {
       const response = await axios.post(newUrl, userData);
-       console.log("response", response.data)
+       console.log("response", response.data);
+       
       if (response.data.success) {
         setToken(response.data.token);
         localStorage.setItem("token", response.data.token);
-        setShowLogin(false);
+        console.log("Token:", response.data.token);
+
+       setShowLogin(false);
         navigate("/")
-      } else {
-        alert(response.data.message);
       }
-    } catch (error) {
-      console.error("Error during login:", error);
-      alert("An error occurred. Please try again.");
+      else {
+        alert(response.data.message || "An error occurred.");
+      }
+    } catch (success) {
+      console.log("User registered successfully", success);
+      alert("User registered successfully");
     }
   };
 

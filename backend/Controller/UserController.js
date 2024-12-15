@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: "dimplejoya2@gmail.com",
-    pass: "snkzbonylxacoueh",
+    user: "joyadinky@gmail.com",
+    pass: "ncupjexbppmqxdfn",
   },
 });
 
@@ -99,23 +99,31 @@ const registerUser = async (req, res) => {
       httpOnly: true,
     });
 
-     
+    
 
     await transporter.sendMail({
-      from: "dimplejoya2@gmail.com",
+      from: "joyadinky@gmail.com",
       to: email,
       subject: "OTP Verification",
-      html: `<h1>your Otp is ${otp}</h1>`,
+      html: `<h1>Your OTP is ${otp}</h1>`,
+    }, (err, info) => {
+      if (err) {
+        console.error("Error sending OTP:", err);
+        return res.status(500).json({
+          success: false,
+          message: "Failed to send OTP",
+          error: err.message,
+        });
+      } else {
+        console.log("OTP sent successfully:", info.response);
+        return res.status(200).json({
+          success: true,
+          message: "User registered successfully. OTP sent to email.",
+          token,
+        });
+      }
     });
-    console.log("Sending OTP to:", email);
-
-   
-  res.json({success:true, token});
-   return res.status(200).json({
-      success: true,
-      message: "User registered successfully",
-      token,
-    });
+    
 
 
 

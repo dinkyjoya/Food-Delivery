@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "./SinglePage.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://localhost:8000";
 import { StoreContext } from "../../context/StoreContext";
 import { Toaster, toast } from "react-hot-toast";
 
@@ -40,7 +40,7 @@ const SinglePage = () => {
       <Toaster position="bottom-right" reverseOrder={false} />
 
       <img
-        src={`http://localhost:8000/images/${singleFood.image}`}
+        src={`https://localhost:8000/images/${singleFood.image}`}
         alt={singleFood.name}
       />
       <div className="product-details">

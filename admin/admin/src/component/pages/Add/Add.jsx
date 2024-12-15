@@ -3,7 +3,7 @@ import "./Add.css";
 import { assets } from "../../../assets/admin_assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
-axios.defaults.baseURL = "http://localhost:8000";
+axios.defaults.baseURL = "https://localhost:8000";
 
 const Add = () => {
  

@@ -1,47 +1,79 @@
-
+/* General Navbar Styles */
 .navbar {
-  padding: 20px 20px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  color: black;
-  position: relative;
-}
-
-
-.navbar-menu {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  color: rgb(56, 53, 61);
-  font-size: 18px;
-}
-
-
-.navbar-menu.open {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
+  background-color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
-  background: rgb(232, 122, 43);
-  padding: 10px 0;
-  z-index:2;
+  z-index: 1000; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  transition: top 0.3s ease-in-out; 
 }
 
+.navbar-toggler {
+  display: none;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
 
+/* Navbar Menu Styles */
+.navbar-menu {
+  display: flex; /* Flex for large screens */
+  list-style: none;
+  gap: 20px;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.navbar-menu a.active {
+  background-color: #f1f1f1;
+}
+
+.navbar-menu.open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.navbar-menu a {
+  display: block;
+  padding: 15px;
+}
+
+/* Right Section Styles */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 40px;
   font-size: 20px;
+  gap: 20px;
 }
 
 .navbar-search-form {
   display: flex;
 }
-
 
 .navbar-search-form input {
   border: 1px solid #ccc;
@@ -50,7 +82,25 @@
   padding: 8px; /* Added padding for better usability */
 }
 
+/* Close Icon */
+.close-icon {
+  display: none;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
 
+.navbar-menu.open ~ .close-icon {
+  display: block;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.close-icon:hover {
+  color: rgb(232, 122, 43); /* Add a hover color for better UX */
+}
+
+/* Sign In Button */
 .navbar .sign-in-button {
   background: transparent;
   font-size: 16px;
@@ -62,53 +112,12 @@
   transition: 0.3s;
 }
 
-
 .navbar .sign-in-button:hover {
   background-color: rgb(8, 156, 31);
-  color: white; /* Added color for better contrast */
+  color: white;
 }
 
-
-.navbar .active {
-  padding-bottom: 2px;
-  border-bottom: 3px solid rgb(56, 53, 61);
-}
-
-
-.navbar li {
-  cursor: pointer;
-  transition: ease-in-out;
-}
-
-
-.navbar-search-icon {
-  position: relative;
-}
-
-.navbar-search-icon .dot {
-  position: absolute;
-  min-width: 10px;
-  min-height: 10px;
-  background-color: rgb(8, 156, 31);
-  border-radius: 50%;
-  top: -8px;
-  right: -8px;
-}
-
-
-.navbar-toggler {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.navbar-profile {
-  position: relative;
-}
-
-
+/* Profile Dropdown */
 .nav-profile-dropdown {
   position: absolute;
   display: none;
@@ -129,7 +138,6 @@
   cursor: pointer;
 }
 
-
 .nav-profile-dropdown li {
   display: flex;
   align-items: center;
@@ -137,60 +145,57 @@
   cursor: pointer;
 }
 
- 
-.close-icon{
-  display: none;
-} 
-
-
-
 .nav-profile-dropdown img {
   width: 20px;
 }
-
 
 .nav-profile-dropdown li:hover {
   color: rgb(203, 81, 20);
 }
 
-
+/* Responsive Styles for Smaller Screens (Below 768px) */
 @media (max-width: 768px) {
-  .navbar {
-  display: flex; 
-    padding: 10px;
-    justify-content: space-between; 
-  }
-
+  /* Navbar Menu: Hide by default */
   .navbar-menu {
-    display: none; 
+    display: none;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* Align below the navbar */
+    left: 0;
+    background-color: #fff;
+    z-index: 999; /* Ensure the menu stays above other content */
   }
 
-  .navbar-toggler {
-    display: block; 
-  }
-
-  
-  .close-icon{
+  .navbar-menu.open {
     display: block;
   }
 
-
-  .navbar-right {
-    display: none; 
+  /* Navbar Toggler: Show on small screens */
+  .navbar-toggler {
+    display: block;
   }
 
-  .navbar button {
-    font-size: 14px;
-    padding: 8px 20px;
+  /* Right Section: Hide for small screens */
+  .navbar-right {
+    display: none;
+  }
+
+  /* Navbar Menu Links: Align in the center */
+  .navbar-menu a {
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* Hide Search Bar on Small Screens */
+  .navbar-search-form {
+    display: none;
   }
 }
 
+/* Small Screen Styling (Below 480px) */
 @media (max-width: 480px) {
+  /* Adjust font size for very small screens */
   .navbar-menu {
     font-size: 14px;
   }

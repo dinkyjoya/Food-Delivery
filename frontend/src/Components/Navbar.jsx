@@ -38,13 +38,15 @@ const Navbar = ({setShowLogin}) => {
        <Link to="/"> <img src='https://png.pngtree.com/png-vector/20220708/ourmid/pngtree-fast-food-logo-png-image_5763171.png' width="100" alt="logo" /></Link>
    
         <button className='navbar-toggler' onClick={toggleMenu}>
-        <i class="fa-solid fa-bars" style={{color: '#000000'}}></i>
+          {isMenuOpen ?
+          (<i className="fa-solid fa-xmark" style={{color: '#000000'}}></i>)
+          :
+         (<i className="fa-solid fa-bars" style={{color: '#000000'}}></i>)
+        }
        </button>
+     
 
         <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
-        <button className='close-icon' onClick={toggleMenu}>
-          <i className="fa-solid fa-xmark"></i>
-        </button>
            <Link to='/' onClick={()=>setMenu("home")} className={menu === "home" ? "active": ""}>Home</Link>
            <Link to='/explore' onClick={()=>setMenu("menu")} className={menu === "menu"? "active": ""}>Menu</Link>
            <Link to='/app-download' onClick={()=>setMenu("Mobile-app")} className={menu=== "Mobile-app" ? "active": ""}>Mobile-app</Link>
