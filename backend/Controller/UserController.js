@@ -1,7 +1,7 @@
 import userModel from "../Models/UserModel.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
-import bcrypt from "bcrypt";
+import bcrypt from 'bcryptjs'
 import validator from "validator";
 
 const transporter = nodemailer.createTransport({
