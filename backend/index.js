@@ -18,7 +18,7 @@ const port = process.env.PORT || 8000;
 app.use(bodyParser.json());
 app.use(express.json());
     app.use(cors({
-        origin: process.env.CLIENT_URL || "http://localhost:3000", // Set to your client URL
+        origin: "http://localhost:8000", // Set to your client URL
         methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
         credentials: true,
     }));
