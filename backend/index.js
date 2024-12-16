@@ -17,13 +17,12 @@ const port = process.env.PORT || 8000;
 //middleware
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors(
-    {
-        origin:[""],
-        methods:["POST","GET"],
-        credentials:true
-    }
-));
+    app.use(cors({
+        origin: process.env.CLIENT_URL || "http://localhost:3000", // Set to your client URL
+        methods: ["POST", "GET", "PUT", "DELETE", "OPTIONS"],
+        credentials: true,
+    }));
+    
 
 connectDatabase();
 
