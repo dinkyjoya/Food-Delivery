@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors(
     {
-        origin:["https://deploy-food-Delivery.vercel.app"],
+        origin:[""],
         methods:["POST","GET"],
         credentials:true
     }
