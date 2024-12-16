@@ -17,7 +17,13 @@ const port = process.env.PORT || 8000;
 //middleware
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://deploy-food-Delivery.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 
 connectDatabase();
 
